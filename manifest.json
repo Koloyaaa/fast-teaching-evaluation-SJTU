@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "学生评价自动评分插件",
+  "version": "1.1",
+  "description": "为上海交通大学教务系统学生评价页面提供一键批量填写选项（支持特殊选项如听课情况、兴趣程度）和占位符功能",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.sjtu.edu.cn/*/xspj*",
+        "*://localhost/*/xspj*",
+        "*://127.0.0.1/*/xspj*",
+        "<all_urls>"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_title": "自动评分"
+  }
+}
